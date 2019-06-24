@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script>
+
+function getdataa()
+{
+	document.Form2.action="ACCOPEN.html";
+	document.Form2.submit();
+}
+
+function getdata()
+{
+	document.Form2.action="Deposit.html";
+	document.Form2.submit();
+}
+function getdata1()
+{
+	document.Form2.action="WITHDRAWL.html";
+	document.Form2.submit();
+}
+function getdata2()
+{
+	document.Form2.action="transfer.html";
+	document.Form2.submit();
+}
+function getdata3()
+{
+	document.Form2.action="close.html";
+	document.Form2.submit();
+}
+
+
+
+
+
+</script>
+</head>
+<body>
+<center><h1>PLEASE PERFORM A SPECIFIC OPERATION</h1></center>
+<center><form name="Form2">
+<center><input type="button" onclick="getdataa()" value="ACCOUNT OPENING" /></center><br>
+<center><input type="button" onclick="getdata()"  value="DEPOSIT"/></center><br>
+<center><input type="button" onclick="getdata1()" value="WITHDRAWAL"/></center><br>
+<center><input type="button" onclick="getdata2()" value="TRANSFER"/></center><br>
+<center><input type="button" onclick="getdata3()" value="ACCOUNT CLOSING"/></center>
+</form></center>
+
+</body>
+</html>

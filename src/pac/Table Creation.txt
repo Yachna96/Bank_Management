@@ -1,0 +1,35 @@
+ALL TABLES CREATED
+=====================
+Create table Employee_Details(Emp_id int NOT NULL PRIMARY KEY,Emp_password varchar(20),B_id int,
+Constraint fk FOREIGN KEY (B_id) REFERENCES Branch_Details(B_id));
+
+Create table( Customer_Personal_Details(Cust_id int NOT NULL PRIMARY KEY,Cust_name varchar(20),Date_of_birth date,Address varchar(30),
+Contact_no varchar(10),Email_id varchar(20),Gender varchar(10),Cust_password varchar(20));
+
+Create table Account_Details(Acc_no int NOT NULL PRIMARY KEY,Cust_id int,
+Constraint fk1 FOREIGN KEY (Cust_id)REFERENCES Customer_Personal_Details(Cust_id),Acc_type varchar(20),Registration_date date,
+Activation_date date,B_id int,Initial_Deposit int,
+Constraint fk3 FOREIGN KEY (B_id)REFERENCES Branch_Details(B_id));
+
+Create table Transaction_Details(Trans_no int NOT NULL PRIMARY KEY,Acc_no int,
+Constraint fk4 FOREIGN KEY (Acc_no) REFERENCES Account_Details(Acc_no),Trans_date date,
+Medium_of_transaction varchar(20),Trans_type varchar(20),Trans_amount int);
+
+Create table Branch_Details(B_id int NOT NULL PRIMARY KEY,B_name varchar(20),B_city varchar(20),Ifsc_code varchar(20));
+
+INSERT VALUES INTO TABLES
+===========================
+insert into Branch_Details values(1,'Dwarka','Delhi','ALB1001');
+insert into Branch_Details values(2,'Kirti Nagar','Delhi','ALB1545');
+insert into Branch_Details values(3,'Karnal','Haryana','ALB1075');
+insert into Branch_Details values(4,'Ludhiana','Punjab','ALB1298');
+insert into Branch_Details values(5,'Janak Puri','Delhi','ALB1055');
+
+insert into Employee_Details values(001,'Dron','abc',1);
+insert into Employee_Details values(002,'Yachna','abc1',2);
+insert into Employee_Details values(003,'Rohan','abc2',3);
+insert into Employee_Details values(004,'Neha','abc3',4);
+insert into Employee_Details values(005,'Abhimanyu','abc4',5);
+
+select * from Branch_Details;
+select * from Employee_Details;
